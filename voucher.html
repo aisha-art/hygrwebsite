@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voucher hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .top-strip {
+            background-color: #204129;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .photo-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 3px solid #ccc;
+            object-fit: cover;
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .voucher-section {
+            margin-top: 20px;
+            background-color: rgba(75, 83, 32, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .voucher-section:hover {
+            background-color: #225525;
+        }
+        .rect {
+            margin-top: 10px;
+            background-color: rgb(2, 63, 17);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .claim-btn {
+            background-color: rgb(4, 141, 4);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .claim-btn:hover {
+            background-color: #c4e3c4;
+        }
+        .search-section {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .search-bar {
+            padding: 8px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .search-enter-btn {
+            background-color: rgb(2, 63, 17);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-enter-btn:hover {
+            background-color: #6c846c;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        footer a {
+            color: #f7c102;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <div class="top-strip">
+        <img src="hygr.png" alt="Hygr Logo" class="photo-placeholder" />
+    </div>
+    <!-- Main Content -->
+    <main>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="form.html">Form</a></li>
+                <li><a href="voucher.html">Voucher</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="Exclusive Vouchers">
+            <h2>Exclusive Vouchers</h2>
+            <div id="sign-up-voucher" class="voucher-section">Sign Up Voucher</div>
+            <div id="sign-up-options" style="display: none;">
+                <div class="rect">
+                    30% Off (Min. Spend RM90)
+                    <button class="claim-btn">Claim</button>
+                </div>
+                <div class="rect">
+                    RM6 Off (Min. Spend RM30)
+                    <button class="claim-btn">Claim</button>
+                </div>
+                <div class="rect">
+                    Free Shipping (Min. Spend RM100)
+                    <button class="claim-btn">Claim</button>
+                </div>
+                <div class="rect">
+                    RM2 Off Free Shipping 
+                    <button class="claim-btn">Claim</button>
+                </div>
+                <div class="rect">
+                    50% Off (Min. Spend RM200)
+                    <button class="claim-btn">Claim</button>
+                </div>
+            </div>
+            <section id="More Great Vouchers">
+            <h2>More Great Vouchers</h2>
+            <div id="donation-voucher" class="voucher-section">Donation Voucher</div>
+            <div id="donation-search" class="search-section">
+                <h4>Enter your donation code to claim a voucher</h4>
+                <input type="text" class="search-bar" id="donation-code" />
+                <br />
+                <button class="search-enter-btn" id="donation-enter">Enter</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popups -->
+    <div id="popup-invalid" class="popup invalid">
+        Invalid Code
+    </div>
+    <div id="popup-claim" class="popup">
+        <div class="rect">
+            90% Off (Min. Spend RM0)
+            <button class="claim-btn">Claim</button>
+        </div>
+    </div>
+    <div id="popup-thankyou" class="popup">
+        Thank You, You Have Successfully Claimed This Voucher!
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Follow us on <a href="https://www.instagram.com/hygr.my/" target="_blank">Instagram</a> and <a href="https://www.tiktok.com/@hygr.my" target="_blank">TikTok</a></p>
+        <p>&copy; 2025, Keep Green with HYGR</p>
+    </footer>
+    <script>
+        const validCodes = [
+            'TS14', 'FL26', 'SN22', 'RED30', '8921',
+            'REP15', 'LOVE19', 'FOLK17', 'EM17', 'MN22',
+            'TTPD31', 'TAS13'
+        ];
+        // Toggle visibility for Sign Up Voucher Options
+        document.getElementById('sign-up-voucher').addEventListener('click', function() {
+            const options = document.getElementById('sign-up-options');
+            options.style.display = options.style.display === 'none' ? 'block' : 'none';
+        });
+        // Add event listeners for Sign Up Claim buttons
+        const claimButtons = document.querySelectorAll('#sign-up-options .claim-btn');
+        claimButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const parent = button.parentNode;
+                button.style.display = 'none';
+                const claimedText = document.createElement('span');
+                claimedText.textContent = 'Claimed';
+                claimedText.style.color = 'lightgreen';
+                claimedText.style.fontWeight = 'bold';
+                parent.appendChild(claimedText);
+            });
+        });
+        // Toggle visibility for Donation Voucher Search
+        document.getElementById('donation-voucher').addEventListener('click', function() {
+            const search = document.getElementById('donation-search');
+            search.style.display = search.style.display === 'none' ? 'block' : 'none';
+        });
+        // Handle Donation Code Entry
+        document.getElementById('donation-enter').addEventListener('click', function() {
+            const code = document.getElementById('donation-code').value;
+            const popupInvalid = document.getElementById('popup-invalid');
+            const popupClaim = document.getElementById('popup-claim');
+            const popupThankYou = document.getElementById('popup-thankyou');
+
+            if (!validCodes.includes(code)) {
+                popupInvalid.style.display = 'block';
+                setTimeout(() => popupInvalid.style.display = 'none', 2000);
+            } else {
+                popupClaim.style.display = 'block';
+                popupClaim.querySelector('.claim-btn').addEventListener('click', function() {
+                    popupClaim.style.display = 'none';
+                    popupThankYou.style.display = 'block';
+                    setTimeout(() => popupThankYou.style.display = 'none', 2000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

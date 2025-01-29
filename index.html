@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color:#f5f5dc; 
+    }
+    header {
+      background: #1e3d27;
+      color: #fff;
+      padding: 0.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      padding-right: 3%;
+      font-weight: bold;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav ul li a:hover {
+      color: #4CAF50;
+      transform: scale(1.1);
+    }
+    .section {
+      padding: 0rem 0px;
+      color: #000000;
+      font-family: 'Cooper Black';
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: #f5f5dc;
+    }
+    .section p {
+        font-family: Arial, sans-serif;
+        font-size: medium;
+    }
+    .hero-boxes {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 30px 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 20px;
+    }
+    .hero-boxes .box {
+      text-align: center;
+      width: 20%; /* Adjust width as needed */
+      height: fit-content;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      background: #ffffff;
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-boxes .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    }
+    .hero-boxes img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .hero-boxes img:hover {
+      transform: scale(1.05);
+    }
+    .hero-boxes p {
+      margin-top: 10px;
+      color: #000000;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    /* Video Section Styles */
+    .video-section {
+      padding: 2rem 30px;
+      background-color: #1e3d27;
+      text-align: center;
+    }
+    .video-section h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #ffffff;
+    }
+    .video-container {
+      display: flex;
+      gap: 20px;
+      width:100%;
+      height: fit-content;
+      padding: 10px 5px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .video-container::-webkit-scrollbar {
+      height: 2px;
+    }
+    .video-container::-webkit-scrollbar-thumb {
+      background: #1e3d27; /* Custom scrollbar color */
+      border-radius: 4px;
+    }
+  .video-item {
+      flex: 0 0 auto; /* Prevent shrinking */
+      width: calc(400px); /* Fixed width for consistency */
+      height: 600px; /* Fixed height for consistency */
+      border: 2px solid #000000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+    .video-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+    .highlights div {
+      flex: 1;
+      margin: 10px;
+      background: rgba(75, 83, 32, 0.7);
+      padding: 15px;
+    }
+    .cta {
+      background: #ada8a2;
+      text-align: center;
+      font-size: medium;
+      padding: 2rem;
+      color: #202020;
+    }
+    .social-nav {
+      position: fixed;
+      right: 5px;
+      bottom: 2%;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+      border-radius: 25px;
+      padding: 0px 0px;
+    }
+    .social-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 200px;
+      display:contents;
+    }
+    .social-nav li {
+      margin: 8px 0px;
+    }
+    .social-nav img {
+      width: 35px; 
+      height: 35px;
+      margin: -6px 0px;
+      border-radius: 20px;
+      transition: transform 0.3s;
+    }
+    .social-nav img:hover {
+      transform: scale(1.1); /* Slight zoom on hover */
+    }
+    footer h2 {
+      font-size: 20px;
+      text-align: center;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 0.1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="form.html">Form</a></li>
+        <li><a href="voucher.html">Voucher</a></li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <img src="hygr.png" alt="HYGR Logo" style="width: 100px; height: auto;">
+    </div>
+  </header>
+    <!-- About Section -->
+  <section id="about" class="section">
+    <h2>Keep Green with HYGR</h2>
+        <p>Our mission is to bring positive change and inspire others to join our journey.</p>
+        <p>Your support can transform lives!</p>
+  </section>
+  <body>
+    <!-- New Flexbox Section -->
+  <section id="features" class="section">
+    <section class="hero">
+        <section id="hero-boxes" class="section hero-boxes">
+          <div class="box">
+            <img src="deodorant.jpg" alt="Box 1">
+            <p>Deodorant</p>
+          </div>
+          <div class="box">
+            <img src="lipbalm.jpg" alt="Box 2">
+            <p>Lipbalm</p>
+          </div>
+          <div class="box">
+            <img src="sunscreen.jpg" alt="Box 3">
+            <p>Sunscreen</p>
+          </div>
+          <div class="box">
+            <img src="hairoil.jpg" alt="Box 4">
+            <p>Hair oil</p>
+          </div>
+        </section>  
+  </section>
+    <!-- New Video Section -->
+    <section id="video-section" class="video-section">
+      <h2>Besties🎀❤️ </h2>
+      <div class="video-container">
+        <div class="video-item">
+          <video src="b1.mp4" autoplay muted loop></video>
+        </div>
+        <div class="video-item">
+          <video src="b2.mp4" autoplay muted loop></video>
+        </div>
+        <div class="video-item">
+          <video src="b4.mp4" autoplay muted loop></video>
+        </div>
+        <div class="video-item">
+          <video src="b5.mp4" autoplay muted loop></video>
+        </div>
+        <div class="video-item">
+          <video src="b6.mp4" autoplay muted loop></video>
+        </div>
+        <div class="video-item">
+            <video src="b7.mp4" autoplay muted loop></video>
+          </div>
+  </section>
+    <!-- New Section -->
+  <section class="new-section">
+        <h2>Why Choose HYGR?</h2>
+            <p>HYGR products are made from natural ingredients that are safe, effective, and eco-friendly. We are committed to providing quality products that enhance your lifestyle while promoting sustainability.</p>
+  </section>
+  </body> 
+    <!-- New Section -->
+  <section id="highlights" class="section highlights">
+    <div>
+      <h3>Impact</h3>
+        <p>We’ve helped over 10,000 people!</p>
+    </div>
+    <div>
+      <h3>Forms</h3>
+        <p>Join our nationwide campaigns. Register now !</p>
+    </div>
+    <div>
+      <h3>Voucher</h3>
+        <p>Be a part of the change. Claim today!</p>
+    </div>
+  </section>
+    <!-- New Section -->
+  <section id="cta" class="cta">
+    <h2>Take Action Now</h2>
+    <button style="padding: 10px 20px; background: #333; color: #fff; border: none; cursor: pointer;">Donate</button>
+    <button style="padding: 10px 20px; background: #333; color: #fff; border: none; cursor: pointer;">Vouchers</button>
+  </section>
+    <!-- New Section -->
+  <section>
+  <nav class="social-nav">
+    <ul>
+        <li><a href="https://wa.me/+601158645324" target="_blank"><img src="W1.jpg" alt="WhatsApp"></a></li>
+        <li><a href="https://instagram.com/hygr.my" target="_blank"><img src="I1.jpg" alt="Instagram"></a></li>
+        <li><a href="https://tiktok.com/@hygr.my" target="_blank"><img src="T1.jpg" alt="TikTok"></a></li>
+    </ul>
+  </nav>
+</section>
+    <!-- Footer -->
+  <footer>
+    <h2>Stay in touch</h2>
+        <p>We bring you the latest updates on what's happening at HYGR!</p>
+        <p>Follow us on <a href="#" style="color: #f7c102;">Social Media</a></p>
+        <p>&copy; 2025, Keep Green with HYGR</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f5dc;
+    }
+    header {
+      background: #204129;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .header-image-container {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .header-image {
+      width: 100px; 
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+    nav {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    .frame {
+      width: 400px;
+      height: 690px;
+      margin-right: 20px;
+      border: 3px solid #333;
+      padding: 10px;
+      border-radius: 15px;
+    }
+    .frame img {
+      width: 100%;
+      height: 100%; 
+      object-fit: cover;
+    }
+    .blur-container {
+      width: calc(100% - 340px); 
+      background-color: rgba(75, 83, 32, 0.7); 
+      padding: 20px;
+      color: white;
+      backdrop-filter: blur(10px); 
+      box-sizing: border-box;
+      border-radius: 15px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blur-container h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .blur-container p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .content {
+      padding: 20px;
+      overflow: hidden; 
+    }
+    .hero {
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .section {
+      padding: 2rem 20px;
+      text-align: center;
+    }
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+    .highlights div {
+      flex: 1;
+      margin: 10px;
+      background: #f4f4f4;
+      padding: 15px;
+    }
+    .circle-frame-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 30px;
+      gap: 20px; 
+    }
+    .circle-frame {
+      text-align: center;
+      flex: 1;
+    }
+    .circle-frame .circle {
+      width: 100px;
+      height: 100px;
+      background-color: #f4f4f4;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .circle-frame .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .circle-frame .circle p {
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .circle-frame-description {
+      font-size: 1rem;
+      color: #fff;
+    }
+    /* Image Frames Section */
+    .image-frame-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    .image-frame {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-image-container">
+      <img src="hygrhtml.jpg" alt="Campaign Logo" class="header-image">
+    </div>
+      <p>Join us to make a difference!</p>
+  </header>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="form.html">Form</a></li>
+      <li><a href="voucher.html">Voucher</a></li>
+    </ul>
+  </nav>
+  <!-- Main container with frame and blur-container side by side -->
+  <div class="main-container">
+    <div class="frame">
+      <img src="hygrcampaign.jpg" alt="Campaign Image">
+  </div>
+  <!-- Blur container with army green color and text -->
+  <div class="blur-container">
+      <h2>Keep Green with Hygr</h2>
+      <p>This recycling campaign aims to save our beloved Earth from being devoured by waste!</p>
+      <p>Hygr, who loves the Earth dearly, wants to invite you to join in recycling and using products that practice economically friendly techniques for our collective comfort and progress towards a bright future for Malaysia <3</p>
+      <p><strong>Want to save the Earth with Hygr? It's easy!</strong></p>
+  <!-- Circle Frames Section -->
+    <div class="circle-frame-container">
+        <div class="circle-frame">
+          <div class="circle">
+            <img src="hygrrecycle.jpg" alt="Step 1 Image">
+    </div>
+    <div class="circle-frame-description">
+            <p>Step 1: You only need to collect recyclable items.</p>
+          </div>
+    </div>
+    <div class="circle-frame">
+        <div class="circle">
+            <img src="hygrform.jpg" alt="Step 2 Image">
+        </div>
+    <div class="circle-frame-description">
+            <p>Step 2: Fill out the registration form to join Keep Green with Hygr.</p>
+        </div>
+    </div>
+    <div class="circle-frame">
+        <div class="circle">
+            <img src="hygrgroup.webp" alt="Step 3 Image">
+        </div>
+    <div class="circle-frame-description">
+            <p>Step 3: The items you want to recycle will be sent with us.</p>
+        </div>
+      </div>
+    </div>
+      <p><strong>What do you get when you join Keep Green with Hygr?</strong></p>
+      <p>You will receive Hygr products and get a 10% discount on every purchase with no expiration date!</p>
+    </div>
+  </div>
+  <!-- New Title Section -->
+  <div class="section">
+    <h2>What do you get when you join Keep Green with Hygr?</h2>
+    <h3>Lightweight Moisturising Refillable Sunscreen, Random Refillable Lipbalm, Random Refillable Deodorant</h3>
+    <p>And a 10% discount on every purchase with no expiration date</p>
+  </div>
+  <!-- Image Frames Section -->
+  <div class="image-frame-container">
+    <div class="image-frame">
+      <img src="hygrsunscreen.webp" alt="Lightweight Moisturising Refillable Sunscreen">
+    </div>
+    <div class="image-frame">
+      <img src="hygrlipbalm.webp" alt="Random Refillable Lipbalm">
+    </div>
+    <div class="image-frame">
+      <img src="hygrdeo.webp" alt="Random Refillable Deodorant">
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>Follow us on <a href="https://www.instagram.com/hygr.my/" target="_blank" style="color: #f7c102;">Instagram</a> and <a href="https://www.tiktok.com/@hygr.my" targer="_blank" style="color: #f7c102;">TikTok</a></p>
+    <p>&copy; 2025, Keep Green with HYGR</p>
+  </footer>
+</body>
+</html>
